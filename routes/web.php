@@ -16,13 +16,20 @@ Route::get('/', function () {
 });
 
 Route::get('contact', function(){
-  return view('contact');
+  return view('internals.contact');
 });
 
 Route::get('about', function(){
-  return view('about');
+  return view('internals.about');
 });
 
 Route::get('students', function(){
-  return view('students');
+  $students = [
+    'John doe',
+    'Jane Doe',
+    'Joko Doe'
+  ];
+  return view('internals.students', [
+    'students' => $students
+  ]);
 });
