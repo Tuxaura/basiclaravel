@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('contact', function(){
   return view('internals.contact');
@@ -23,13 +23,4 @@ Route::get('about', function(){
   return view('internals.about');
 });
 
-Route::get('students', function(){
-  $students = [
-    'John doe',
-    'Jane Doe',
-    'Joko Doe'
-  ];
-  return view('internals.students', [
-    'students' => $students
-  ]);
-});
+Route::get('students', 'StudentsController@list');
